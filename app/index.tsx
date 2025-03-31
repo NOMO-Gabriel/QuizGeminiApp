@@ -9,9 +9,9 @@ import {
   SafeAreaView
 } from 'react-native';
 import { router } from 'expo-router';
-import { getTopScores } from '../../hooks/useSecureStorage';
-import { Score } from '../types/quiz';
-import Colors from '../../constants/Colors';
+import { getTopScores } from '../hooks/useSecureStorage';
+import { Score } from './types/quiz';
+import Colors from '../constants/Colors';
 
 export default function HomeScreen() {
   // État local pour stocker les meilleurs scores et indiquer le chargement

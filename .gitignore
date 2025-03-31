@@ -2,7 +2,8 @@
 
 # dependencies
 node_modules/
-
+# congig
+constants/config.ts
 # Expo
 .expo/
 dist/

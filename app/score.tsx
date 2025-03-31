@@ -8,8 +8,8 @@ import {
   Share
 } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
-import { saveNewScore, getTopScores } from '../../hooks/useSecureStorage';
-import Colors from '../../constants/Colors';
+import { saveNewScore, getTopScores } from '../hooks/useSecureStorage';
+import Colors from '../constants/Colors';
 
 // Type pour les paramètres de l'URL
 type ScoreParams = {

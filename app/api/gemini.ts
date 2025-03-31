@@ -1,9 +1,7 @@
 import axios from 'axios';
-import { GEMINI_API_KEY } from '../../env';
+import { GEMINI_API_KEY, API_BASE_URL,MAX_QUESTIONS} from '../../constants/config';
 import { GeminiResponse, QuizQuestion } from '../types/quiz';
 
-// URL de base de l'API Gemini
-const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
 
 /**
  * Génère une question de quiz avec Gemini API
@@ -24,7 +22,7 @@ export const generateQuizQuestion = async (category = 'général'): Promise<Quiz
 
     // Requête à l'API Gemini
     const response = await axios.post(
-      `${API_URL}?key=${GEMINI_API_KEY}`,
+      `${API_BASE_URL}?key=${GEMINI_API_KEY}`,
       {
         contents: [
           {
@@ -71,7 +69,7 @@ export const generateQuizQuestion = async (category = 'général'): Promise<Quiz
  * @param {number} count - Nombre de questions à générer
  * @returns {Promise<QuizQuestion[]>} - Tableau de questions
  */
-export const generateQuizBatch = async (count = 10): Promise<QuizQuestion[]> => {
+export const generateQuizBatch = async (count = MAX_QUESTIONS): Promise<QuizQuestion[]> => {
   const questions: QuizQuestion[] = [];
   // Différentes catégories pour varier les questions
   const categories: string[] = [

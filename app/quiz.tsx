@@ -9,9 +9,9 @@ import {
   SafeAreaView
 } from 'react-native';
 import { router } from 'expo-router';
-import { generateQuizBatch } from '../api/gemini';
-import { QuizQuestion } from '../types/quiz';
-import Colors from '../../constants/Colors';
+import { generateQuizBatch } from './api/gemini';
+import { QuizQuestion } from './types/quiz';
+import Colors from '../constants/Colors';
 
 // Définition du mapping entre index et lettres d'options
 type OptionIndexMap = { [key: string]: number };
